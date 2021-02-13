@@ -1,0 +1,8 @@
+<div class="left-side">
+    <% @memos.each do |memo| %>
+        <div class="title-room">
+            <%= link_to memo.title, id: "memo-title" %>
+            <%#= memo.title %>
+        </div>
+    <% end %>
+</div>

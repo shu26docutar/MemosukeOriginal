@@ -17,6 +17,4 @@ class MemosController < ApplicationController
   def memo_params
     params.require(:memo).permit(:title, :content)
   end
-  
-  
 end
