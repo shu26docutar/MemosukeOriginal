@@ -114,3 +114,11 @@ abbr[title], acronym[title] {
 .memo-box > textarea {
     margin: 10px;
 }
+
+.left-side {
+    text-align: center;
+}
+
+.title-room {
+    font-size: 30px;
+}
