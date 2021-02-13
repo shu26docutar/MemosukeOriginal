@@ -4,7 +4,27 @@
     <div class="body-content">
         <div class="left-side"></div>
 
-        <div class="main"></div>
+        <div class="main">
+            <div class="memo-area", id="memo-area">
+                <div class="memo-box">
+                <%#= form_with(@memo, local: true) do |f| %>
+                    <%#= f.text_area :content %>
+                    <div class="memo-title">
+                        <textarea>title</textarea>
+                    </div>
+                    <div class="memo-textarea">
+                        <textarea>memo</textarea>
+                    </div>
+                    <div class="memo-btn">
+                        <button class="form-submit">保存</button>
+                        <button class="form-submit">キャンセル</button>
+                    </div>
+                        <%#= f.submit '保存', class: 'form-submit' %>
+                        <%#<button class="form-submit">キャンセル</button>%>
+                    <%# end %>
+                </div>
+            </div>
+        </div>
 
         <div class="right-side">
             <div class="calendar"></div>
