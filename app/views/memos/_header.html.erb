@@ -20,7 +20,7 @@
             <div class="navbar", id="navbar">
                 <ul class="nav-lists">
                     <% if user_signed_in? %>
-                        <li>shuhei<%#= @user.name %></li>
+                        <li><%= current_user.name %></li>
                         <li>詳細<%#= link_to '詳細', user_path(current_user.id) %></li>
                         <li>編集<%#= link_to '編集', edit_user_path(current_user.id) %></li>
                         <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>

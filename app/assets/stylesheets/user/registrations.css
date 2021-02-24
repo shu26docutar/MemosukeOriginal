@@ -1,0 +1,96 @@
+/* header共通部分 */
+.user-header {
+    /* height: calc(100vh - 85%); */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.logo-path {
+    margin-top: 20px;
+    text-decoration: none;
+    color: #9ec34b;
+    font-family: STXingkaiSC-Light;
+    font-weight: bold;
+    font-size: 70px;
+}
+/* ここまで */
+
+.user-area {
+    height: 100vh;
+    width: 100vw;
+}
+
+.containers {
+    text-align: center;
+    padding: 0 20%;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    border: 1px solid #C0C0C0;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.left-side-area {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.right-side-area {
+    width: 50%;
+}
+
+.field {
+    margin: 30px;
+}
+
+.user-filed {
+    height: 35px;
+}
+
+.form-text {
+    font-size: 20px;
+}
+
+.birthday-wrap > p {
+    display: inline-block;
+}
+
+/* ボタンスタイル */
+
+.actions {
+    margin: 20px 0;
+}
+
+.actions-btn {
+    font-size: 35px;
+    height: 60px;
+    width: 180px;
+    position: relative;
+    display: inline-block;
+    padding: 3px 2px;
+    text-decoration: none;
+    color: #FFF;
+    background: #9ec34b;
+    border-radius: 4px;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+    font-weight: bold;
+    border: solid 2px #9ec34b;
+}
+
+.actions-btn:active {
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+}
+
+.actions-btn:hover {
+    opacity: 0.5;
+}
+/* ここまで */
