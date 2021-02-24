@@ -9,7 +9,6 @@
 
       <div class="right-side-area">
         <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
-        <%#= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= render "devise/shared/error_messages", resource: resource %>
 
           <div class="field">
@@ -22,27 +21,31 @@
             <%= f.email_field :email, autocomplete: "email", class: "user-filed" %>
           </div>
 
-          <div class="field">
-            <%= f.label :password, class: "form-text" %>
-            <% if @minimum_password_length %>
-            <em>(<%= @minimum_password_length %> characters minimum)</em>
-            <% end %><br />
-            <%= f.password_field :password, autocomplete: "new-password", class: "user-filed" %>
-          </div>
-
-          <div class="field">
-            <%= f.label :password_confirmation, class: "form-text" %><br />
-            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "user-filed" %>
-          </div>
-
-          <div class="form-group">
-            <div class='form-text-wrap'>
-              <label class="form-text">生年月日</label>
-              <span class="indispensable">必須</span>
+          <%if @sns_id.present? %>
+            <%= hidden_field_tag :sns_auth, true %>
+          <% else %>
+            <div class="field">
+              <%= f.label :password, class: "form-text" %>
+              <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <% end %><br />
+              <%= f.password_field :password, autocomplete: "new-password", class: "user-filed" %>
             </div>
 
-            <div class='birthday-wrap'>
-              <%= raw sprintf(
+            <div class="field">
+              <%= f.label :password_confirmation, class: "form-text" %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "user-filed" %>
+            </div>
+          <% end %>
+
+            <div class="form-group">
+              <div class='form-text-wrap'>
+                <label class="form-text">生年月日</label>
+                <span class="indispensable">必須</span>
+              </div>
+
+              <div class='birthday-wrap'>
+                <%= raw sprintf(
                   f.date_select(
                     :birthday,
                     class:'select-birth',
@@ -53,9 +56,9 @@
                     end_year: (Time.now.year - 5),
                     date_separator: '%s'),
                   "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+              </div>
             </div>
-          </div>
-
+         
           <div class="actions">
             <%= f.submit "サインイン",  class: "actions-btn" %>
           </div>
