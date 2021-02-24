@@ -1,0 +1,14 @@
+<%= form_with(model: @memo, local: true) do |f| %>
+    <div class="memo-title">
+        <%= f.text_area :title %>
+    </div>
+
+    <div class="memo-textarea">
+        <%= f.text_area :content %>
+    </div>
+
+     <div class="memo-btn">
+        <%= f.submit '保存', class: 'form-submit' %>
+        <button class="form-submit">削除</button>
+    </div>
+<% end %>
