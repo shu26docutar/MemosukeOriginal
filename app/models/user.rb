@@ -19,4 +19,13 @@ class User < ApplicationRecord
     end
     { user: user, sns: sns }
   end
+
+  with_options presence: true do
+    validates :name
+    validates :birthday
+  end
+  
+  validates :password, presence: true, length: { minimum: 6 },
+                       format: { with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,}/, message: 'は半角英数字で入力してください' }
+
 end
