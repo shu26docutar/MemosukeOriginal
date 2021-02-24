@@ -1,4 +1,6 @@
 class MemosController < ApplicationController
+  before_action :set_memo, only: [:show, :destroy]
+
   def index
     @memo = Memo.new
     @memos = Memo.all
@@ -7,14 +9,13 @@ class MemosController < ApplicationController
   def create
     @memo = Memo.new(memo_params)
     if @memo.save
-      redirect_to root_path(@memo)
+      redirect_to root_path
     else
         render :index, alert: '保存できませんでした'
     end
   end
 
   def show
-    @memo = Memo.find(params[:id])
   end
 
   def edit
@@ -28,12 +29,17 @@ class MemosController < ApplicationController
   
 
   def destroy
-    
+    @memo.destroy
+    redirect_to root_path(@memo)
   end
   
 
   private
   def memo_params
-    params.require(:memo).permit(:title, :content)
+    params.require(:memo).permit(:title, :content).merge(user_id: current_user.id)
+  end
+
+  def set_memo
+    @memo = Memo.find(params[:id])
   end
 end

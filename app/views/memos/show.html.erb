@@ -4,11 +4,11 @@
     </div>
 
     <div class="memo-textarea">
-        <%= f.text_area :content %>
+        <%= markdown(@memo.content).html_safe %>
     </div>
 
      <div class="memo-btn">
-        <%= f.submit '保存', class: 'form-submit' %>
-        <button class="form-submit">削除</button>
+        <button class="form-submit"><%= link_to 'Destroy', memo_path(@memo.id), method: :delete, class: "select-btn", data: { confirm: '削除してもよろしいですか?' } %></button>
     </div>
 <% end %>
+
