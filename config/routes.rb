@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
   root to: 'memos#index'
-  resources :memos, only: [:create]
+  resources :memos, except: :new
 end
