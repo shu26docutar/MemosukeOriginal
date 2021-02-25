@@ -77,12 +77,6 @@ abbr[title], acronym[title] {
     justify-content: space-between;
 }
 
-.left-side {
-    /* background-color: gray; */
-    border-right: 1px solid#AAAAAA;
-    width: 250px;
-}
-
 .main {
     width: 50%
 }
@@ -115,10 +109,28 @@ abbr[title], acronym[title] {
     margin: 10px;
 }
 
+/* left-side */
 .left-side {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-right: 1px solid#AAAAAA;
+    width: 250px;
 }
 
-.title-room {
+.room {
     font-size: 30px;
+    margin: 10px 0;
 }
+
+.room:hover {
+    opacity: 0.5;
+    background-color: #AAAAAA;
+}
+
+.room-title {
+    text-decoration: none;
+    color: #000000;
+}
+/* end */
