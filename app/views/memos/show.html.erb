@@ -1,14 +1,20 @@
-<%= form_with(model: @memo, local: true) do |f| %>
-    <div class="memo-title">
-        <%= f.text_area :title %>
-    </div>
 
-    <div class="memo-textarea">
-        <%= markdown(@memo.content).html_safe %>
-    </div>
+<div class="show-content">
+    <div class="show-area">
+        <h1>Title:</h1>
+            <div class="show-memo-title">
+                <%= @memo.title %>
+            </div>
 
-     <div class="memo-btn">
-        <button class="form-submit"><%= link_to 'Destroy', memo_path(@memo.id), method: :delete, class: "select-btn", data: { confirm: '削除してもよろしいですか?' } %></button>
-    </div>
-<% end %>
+            <h1>Content:</h1>
+            <div class="show-memo-textarea">
+                <%= markdown(@memo.content).html_safe %>
+            </div>
 
+            <div class="memo-show-btn">
+                <%= link_to 'Destroy', memo_path(@memo.id), method: :delete, class: "actions-btn", data: { confirm: '削除してもよろしいですか?' } %>
+                <%= link_to 'Back', root_path, class: "actions-btn" %>
+                <%= link_to 'edit', edit_memo_path(@memo.id), class: "actions-btn" %>
+            </div>
+    </div>
+</div>

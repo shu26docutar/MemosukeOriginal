@@ -1,0 +1,48 @@
+.show-content {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.show-area {
+    width: 50rem;
+    height: 45rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: scroll;
+}
+
+.show-area, .show-memo-title, .show-memo-textarea {
+    box-shadow: 1px 1px 5px 1px #999;
+}
+
+::-webkit-scrollbar {
+    display:none;
+}
+
+
+.show-memo-title {
+    height: 50px;
+    width: 400px;
+    font-size: 30px;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.show-memo-textarea {
+    height: 100%;
+    font-size: 20px;
+    width: 45rem;
+    margin-bottom: 20px ;
+}
+
+.memo-show-btn {
+    margin: 10px 0;
+}
