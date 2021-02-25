@@ -10,8 +10,8 @@ class User < ApplicationRecord
   def self.from_omniauth(auth)
     sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create
     user = User.where(email: auth.info.email).first_or_initialize(
-        name: auth.info.name,
-        email: auth.info.email
+      name: auth.info.name,
+      email: auth.info.email
     )
     if user.persisted?
       sns.user = user
@@ -24,8 +24,7 @@ class User < ApplicationRecord
     validates :name
     validates :birthday
   end
-  
+
   validates :password, presence: true, length: { minimum: 6 },
                        format: { with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,}/, message: 'は半角英数字で入力してください' }
-
 end

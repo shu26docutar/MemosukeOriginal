@@ -11,7 +11,7 @@ class MemosController < ApplicationController
     if @memo.save
       redirect_to root_path
     else
-        render :index, alert: '保存できませんでした'
+      render :index, alert: '保存できませんでした'
     end
   end
 
@@ -20,7 +20,6 @@ class MemosController < ApplicationController
 
   def edit
   end
-  
 
   def update
     if @memo.update!(memo_params)
@@ -29,15 +28,14 @@ class MemosController < ApplicationController
       render :edit
     end
   end
-  
 
   def destroy
     @memo.destroy
     redirect_to root_path(@memo)
   end
-  
 
   private
+
   def memo_params
     params.require(:memo).permit(:title, :content).merge(user_id: current_user.id)
   end
