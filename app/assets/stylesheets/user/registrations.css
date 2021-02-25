@@ -1,6 +1,5 @@
 /* header共通部分 */
 .user-header {
-    /* height: calc(100vh - 85%); */
     width: 100%;
     display: flex;
     justify-content: center;
