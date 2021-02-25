@@ -12,17 +12,11 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    overflow: scroll;
 }
 
-.show-area, .show-memo-title, .show-memo-textarea {
+.show-area, .show-memo-title, .show-memo-textarea, .edit-memo-textarea {
     box-shadow: 1px 1px 5px 1px #999;
 }
-
-::-webkit-scrollbar {
-    display:none;
-}
-
 
 .show-memo-title {
     height: 50px;
@@ -36,11 +30,16 @@ h1 {
     font-size: 20px;
 }
 
-.show-memo-textarea {
+.show-memo-textarea, .edit-memo-textarea {
     height: 100%;
     font-size: 20px;
     width: 45rem;
     margin-bottom: 20px ;
+    overflow: scroll;
+}
+
+::-webkit-scrollbar {
+    display:none;
 }
 
 .memo-show-btn {
