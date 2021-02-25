@@ -32,8 +32,9 @@ h1 {
 
 .show-memo-textarea, .edit-memo-textarea {
     height: 100%;
-    font-size: 20px;
     width: 45rem;
+    padding: 10px;
+    font-size: 20px;
     margin-bottom: 20px ;
     overflow: scroll;
 }
@@ -44,4 +45,9 @@ h1 {
 
 .memo-show-btn {
     margin: 10px 0;
+}
+
+.edit-textarea {
+    height: 100%;
+    margin-bottom: 20px;
 }
