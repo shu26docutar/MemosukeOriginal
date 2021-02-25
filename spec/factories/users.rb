@@ -5,5 +5,6 @@ FactoryBot.define do
     password              { Faker::Internet.password(min_length: 6) }
     password_confirmation { password }
     birthday              { Faker::Date.between(from: 2.days.ago, to: Date.today) }
+    id                    { 1 }
   end
 end
