@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks',
     registrations: 'users/registrations'
   }
-  root to: 'memos#index'
-  resources :memos, except: :new
+  
+  root to: 'posts#index'
+  resources :posts, except: :new
 end

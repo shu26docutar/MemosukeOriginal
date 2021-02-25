@@ -1,7 +1,0 @@
-<% if user_signed_in? && current_user %>
-    <div class="left-side">
-        <% @memos.each do |memo|%>
-            <%= link_to memo.title, memo_path(memo) %>  
-        <%end%> 
-    </div>
-<% end %>

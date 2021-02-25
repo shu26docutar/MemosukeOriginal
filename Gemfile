@@ -43,6 +43,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'rubocop', require: false
 end
 
 group :test do
@@ -63,3 +64,7 @@ gem 'devise'
 gem 'omniauth-google-oauth2'
 
 gem 'omniauth', '~>1.9.1'
+
+gem 'redcarpet', '~> 3.5', '>= 3.5.1'
+
+gem 'coderay', '~> 1.1', '>= 1.1.3'
