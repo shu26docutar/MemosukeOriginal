@@ -1,0 +1,11 @@
+<% if user_signed_in? %>
+    <div class="left-side">
+        <% @posts.each do |post|%>
+            <% if current_user.id == post.user_id  %>
+                <div class="room">
+                    <%= link_to post.title, post_path(post), class: "room-title" %>
+                </div>
+            <% end %> 
+        <% end %>
+    </div>
+<% end %>
