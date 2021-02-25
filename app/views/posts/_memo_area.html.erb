@@ -1,20 +1,21 @@
-<%#= render "shared/veiw_error_messages" %>
 
 <div class="memo-area", id="memo-area">
-    <div class="memo-box">
-        <%= form_with(model: @post, local: true) do |f| %>
+    <%= form_with(model: @post, local: true) do |f| %>
+        <div class="memo-box">
+            <h1>Title:<h1>
             <div class="memo-title">
-                <%= f.text_area :title %>
+                <%= f.text_area :title, class: "create-memo-title" %>
             </div>
                     
+            <h1>Body:</h1>
             <div class="memo-textarea">
-                <%= f.text_area :body %>
+                <%= f.text_area :body, class: "create-memo-body" %>
             </div>
 
             <div class="memo-btn">
-                <%= f.submit '保存', class: 'form-submit' %>
-                <button class="form-submit">キャンセル</button>
+                <%= f.submit '保存', class: 'actions-btn' %>
+                <button class="actions-btn">中止</button>
             </div>
-        <% end %>
-    </div>
+        </div>
+    <% end %>
 </div>
