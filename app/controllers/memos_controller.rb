@@ -23,7 +23,7 @@ class MemosController < ApplicationController
 
   def update
     if @memo.update!(memo_params)
-      redirect_to root_path(memo_params)
+      redirect_to memo_path(memo_params)
     else
       render :edit
     end
