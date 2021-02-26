@@ -71,6 +71,11 @@ abbr[title], acronym[title] {
     font-size: 25px;
     margin-bottom: 10px;
 }
+
+.add-btn {
+    text-decoration: none;
+    color: #000;
+}
 /* end */
 
 .body-content {
@@ -123,7 +128,8 @@ abbr[title], acronym[title] {
     flex-direction: column;
     text-align: center;
     border-right: 1px solid#AAAAAA;
-    width: 250px;
+    width: 200px;
+    overflow: scroll;
 }
 
 .room {
