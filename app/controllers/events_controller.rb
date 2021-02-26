@@ -13,9 +13,9 @@ class EventsController < ApplicationController
     def create
         if @event = Event.create(event_params)
             redirect_to root_path
-          else
+        else
             render :new
-          end
+        end
     end
 
     def show

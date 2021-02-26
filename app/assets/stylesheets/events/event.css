@@ -1,0 +1,84 @@
+/* evnt-calendar */
+.calendar {
+    height: 100%;
+    width: 76rem;
+}
+
+.event-title {
+
+}
+
+.days {
+    height: 90px;
+    overflow: scroll;
+}
+/* end */
+
+/* event-new */
+.event-forms {
+    text-align: center;
+}
+
+.event-form {
+    height: 100%;
+    margin: 6rem 25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.event-area {
+    width: 30rem;
+    margin-top: 20px;
+}
+
+.form-event {
+    height: 40px;
+    padding: 2px;
+    border: none;
+}
+
+.select-btn-area {
+    display: flex;
+    justify-content: center;
+}
+
+.select-btn {
+    height: 40px;
+    width: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    border: 1px solid #AAA;
+    border-radius: 20px;
+    box-shadow: 0 0 3px 0 rgba(10, 10, 10, 0.12), 0 2px 3px 0 rgba(10, 10, 10, 0.12);
+    transition: .2s;
+    color: #fff;
+    background-color: #9ec34b;
+}
+
+.select-btn:hover {
+    cursor: pointer;
+    box-shadow: 0 15px 30px -5px rgba(10, 10, 10, 0.12), 0 0 5px rgba(10, 10, 10, 0.12);
+    transform: translateY(-3px);
+}
+
+.select-btn > p {
+    font-size: 20px;
+}
+
+.event-btn-area {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.event-btn {
+    margin-right: 10px;
+}
+
+#comment, #place, #url {
+    display: none;
+}
+/* end */

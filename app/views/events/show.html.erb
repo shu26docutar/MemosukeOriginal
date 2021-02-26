@@ -1,0 +1,49 @@
+<div class="show-page">
+    <div class="show-container">
+        <div class="show-area">
+            <div class="show-content">
+                <h1>Title :</h1>
+                <%= @event.title %>
+            </div>
+
+            <div class="show-content">
+                <h1>Schedule Time :</h1>
+                <%= @event.start_time.strftime('%H:%M') %>
+            </div>
+
+            <div class="show-content">
+                <% if @event.plan.present? %>
+                    <h1>Plan :</h1>
+                    <%= @event.plan %>
+                <%end%>
+            </div>
+
+            <div class="show-content">
+                <% if @event.comment.present? %>
+                    <h1>Comment :</h1>
+                    <%= @event.comment %>
+                <% end %>
+            </div>
+
+            <div class="show-content">
+                <% if @event.place.present? %>
+                    <h1>Place :</h1>
+                    <%= @event.place %>
+                <% end %>
+            </div>
+
+            <div class="show-content">
+                <% if @event.url.present? %>
+                    <h1>Url :</h1>
+                    <%= @event.url %>
+                <% end %>
+            </div>
+
+            <div class="show-btn">
+                <td><%= link_to 'Edit', edit_event_path(@event), class: "select-btn" %></td>
+                <td><%= link_to 'Destroy', @event, method: :delete, class: "select-btn",data: { confirm: '削除してもよろしいですか?' } %></td>
+                <td><%= link_to 'Back', :back, class: "select-btn" %></td>
+            </div>
+        </div>
+    </div>
+</div>

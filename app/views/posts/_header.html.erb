@@ -8,13 +8,17 @@
             <div class="icon-btn">
                 <p id="notice"><%= notice %></p>
             </div>
-            
+
             <div class="icon-btn">
                 <button class="material-icons search-btn"><abbr title="検索">search</abbr></button>
             </div>
 
             <div class="icon-btn">
-                <button class="material-icons", id="add-btn"><abbr title="メモの追加">add</abbr></button>
+                <button class="material-icons", id="add-btn"><abbr title="メモの追加">mode</abbr></button>
+            </div>
+
+            <div class="icon-btn">
+                <button class="material-icons"><abbr title="スケジュール追加"><%= link_to 'add',new_event_path, class: 'add-btn' %></abbr></button>
             </div>
 
             <div class="icon-btn">
