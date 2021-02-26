@@ -5,12 +5,12 @@
                 <%= date.day %>
 
                 <% events.each do |event| %>
-                    <%# if current_user.id == event.user_id %>
+                    <% if current_user.id == event.user_id %>
                         <div class="event-title">
                             <%= event.start_time.strftime('%H:%M') %>
                             <%= link_to event.title, event_path(event), class: "event-name" %>
                         </div>
-                    <%# end %>
+                    <% end %>
                 <% end %>
             </div>
         <% end %>
