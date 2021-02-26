@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
-
-    before_action :set_event, only: [:show, :edit, :destroy, :update]
+    before_action :authenticate_user!, only: %i[new edit show]
+    before_action :set_event, only: %i[ show, edit, destroy, update]
     def inex
         @events = Event.all
         events = Event.all
