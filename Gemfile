@@ -68,3 +68,5 @@ gem 'omniauth', '~>1.9.1'
 gem 'redcarpet', '~> 3.5', '>= 3.5.1'
 
 gem 'coderay', '~> 1.1', '>= 1.1.3'
+
+gem  'simple_calendar', '~> 2.4'
