@@ -1,49 +1,50 @@
-<div class="show-page">
-    <div class="show-container">
-        <div class="show-area">
-            <div class="show-content">
-                <h1>Title :</h1>
-                <%= @event.title %>
-            </div>
 
-            <div class="show-content">
-                <h1>Schedule Time :</h1>
-                <%= @event.start_time.strftime('%H:%M') %>
-            </div>
+<div class="show-container">
+    <div class="details">
 
-            <div class="show-content">
-                <% if @event.plan.present? %>
-                    <h1>Plan :</h1>
-                    <%= @event.plan %>
-                <%end%>
-            </div>
+        <h1>Title :</h1>
+        <div class="show-event-content">
+            <%= @event.title %>
+        </div>
 
-            <div class="show-content">
-                <% if @event.comment.present? %>
-                    <h1>Comment :</h1>
-                    <%= @event.comment %>
-                <% end %>
-            </div>
+        <h1>Schedule Time :</h1>
+        <div class="show-event-content">
+            <%= @event.start_time.strftime('%H:%M') %>
+        </div>
 
-            <div class="show-content">
-                <% if @event.place.present? %>
-                    <h1>Place :</h1>
-                    <%= @event.place %>
-                <% end %>
+        <% if @event.plan.present? %>
+            <h1>Plan :</h1>
+            <div class="show-event-content">
+                <%= @event.plan %>
             </div>
+        <%end%>
 
-            <div class="show-content">
-                <% if @event.url.present? %>
-                    <h1>Url :</h1>
-                    <%= @event.url %>
-                <% end %>
+        <% if @event.comment.present? %>
+            <h1>Comment :</h1>
+            <div class="show-event-content">
+                <%= @event.comment %>
             </div>
+        <% end %>
 
-            <div class="show-btn">
-                <td><%= link_to 'Edit', edit_event_path(@event), class: "select-btn" %></td>
-                <td><%= link_to 'Destroy', @event, method: :delete, class: "select-btn",data: { confirm: '削除してもよろしいですか?' } %></td>
-                <td><%= link_to 'Back', :back, class: "select-btn" %></td>
+        <% if @event.place.present? %>
+            <h1>Place :</h1>
+            <div class="show-event-content">
+                <%= @event.place %>
             </div>
+        <% end %>
+
+        <% if @event.url.present? %>
+            <h1>Url :</h1>
+            <div class="show-event-content">
+                <%= @event.url %>
+            </div>
+        <% end %>
+
+        <div class="show-event-btn">
+            <%= link_to 'Edit', edit_event_path(@event), class: "select-btn" %>
+            <%= link_to 'Destroy', @event, method: :delete, class: "select-btn",data: { confirm: '削除してもよろしいですか?' } %>
+            <%= link_to 'Back', root_path, class: "select-btn" %>
         </div>
     </div>
 </div>
+
