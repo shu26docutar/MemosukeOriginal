@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   def index
     @post = Post.new
     @posts = Post.all
+    @events = Event.all
   end
 
   def show
