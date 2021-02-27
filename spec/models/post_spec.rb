@@ -6,12 +6,12 @@ RSpec.describe Post, type: :model do
   end
 
   describe 'メモ投稿' do
-    context 'メモ投稿がうまくいく場合' do
+    context 'メモ投稿ができる場合' do
       it 'titleとbodyがあれば投稿できる' do
         expect(@post).to be_valid
       end
 
-      it 'bodyなしても投稿できる' do
+      it 'bodyなしでも投稿できる' do
         @post.body = nil
         expect(@post).to be_valid
       end
@@ -22,17 +22,23 @@ RSpec.describe Post, type: :model do
       end
     end
 
-    context 'メモ投稿がうまくいかない場合' do
+    context 'メモ投稿ができない場合' do
       it 'titleが空では投稿できない' do
         @post.title = nil
         @post.valid?
-        expect(@post.errors.full_messages).to include "Title can't be blank"
+        expect(@post.errors.full_messages).to include 'Titleを入力してください'
       end
 
-      it 'titleが10以上であれば投稿できない' do
+      it 'titleが10以上では投稿できない' do
         @post.title = 'aaaaaaaaaaa'
         @post.valid?
-        expect(@post.errors.full_messages).to include 'Title is too long (maximum is 10 characters)'
+        expect(@post.errors.full_messages).to include 'Titleは10文字以内で入力してください'
+      end
+
+      it '登録していないユーザーは投稿できない' do
+        @post.user_id = nil
+        @post.valid?
+        expect(@post.errors.full_messages).to include 'Userを入力してください'
       end
     end
   end
