@@ -84,7 +84,7 @@ abbr[title], acronym[title] {
 }
 
 .right-side {
-    width: (100vw - 250px);
+    width: calc(100vw - 250px);
 }
 
 
@@ -126,7 +126,6 @@ abbr[title], acronym[title] {
     display: flex;
     flex-direction: column;
     text-align: center;
-    /* border-right: 1px solid#AAAAAA; */
     width: 200px;
     overflow: scroll;
 }
@@ -146,6 +145,7 @@ abbr[title], acronym[title] {
     color: #000000;
 }
 /* end */
+
 /* show */
 .show-content {
     height: 100vh;
