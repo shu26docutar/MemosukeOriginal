@@ -2,6 +2,7 @@
 <div class="memo-area", id="memo-area">
     <%= form_with(model: @post, local: true) do |f| %>
         <div class="memo-box">
+            <p id="notice"><%= notice %></p>
             <h1>Title:<h1>
             <div class="memo-title">
                 <%= f.text_area :title, class: "create-memo-title" %>

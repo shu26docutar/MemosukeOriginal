@@ -19,7 +19,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to root_path
     else
-      render :index, alert: '保存できませんでした'
+      redirect_to root_path, flash: { notice: "保存できませんでした" }
     end
   end
 
