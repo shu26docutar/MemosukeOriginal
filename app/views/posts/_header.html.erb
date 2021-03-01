@@ -9,6 +9,7 @@
                 <p id="notice"><%= notice %></p>
             </div>
 
+            <% if user_signed_in? %>
             <div class="icon-btn">
                 <button class="material-icons search-btn"><abbr title="検索">search</abbr></button>
             </div>
@@ -20,6 +21,7 @@
             <div class="icon-btn">
                 <button class="material-icons"><abbr title="スケジュール追加"><%= link_to 'add',new_event_path, class: 'add-btn' %></abbr></button>
             </div>
+            <% end %>
 
             <div class="icon-btn">
                 <button class="material-icons", id="face-btn">face</button>
