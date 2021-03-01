@@ -9,7 +9,7 @@ RSpec.describe 'メモを投稿できるとき', type: :system do
   it 'ログインしているユーザーは新規投稿できる' do
     sign_in(@user)
         
-    expect(page).to have_content('add')
+    expect(page).to have_content('mode')
 
     find('.icon-area').find('#add-btn').click
     
