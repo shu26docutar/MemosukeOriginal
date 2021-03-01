@@ -6,42 +6,47 @@ RSpec.describe 'メモを投稿できるとき', type: :system do
     @post_room = Faker::Lorem.characters(number: 10)
     @post_body = Faker::Lorem.sentence
   end
-  it 'ログインしているユーザーは新規投稿できる' do
-    sign_in(@user)
+
+  context 'メモを投稿できるとき' do
+    it 'ログインしているユーザーは新規投稿できる' do
+      sign_in(@user)
         
-    expect(page).to have_content('mode')
+      expect(page).to have_content('mode')
 
-    find('.icon-area').find('#add-btn').click
+      find('.icon-area').find('#add-btn').click
     
-    expect(page).to have_content('Title:')
-    expect(page).to have_content('Body:')
+      expect(page).to have_content('Title:')
+      expect(page).to have_content('Body:')
 
-    expect(page).to have_button('保存')
-    expect(page).to have_button('中止')
-    expect(page).to have_button('リセット')
+      expect(page).to have_button('保存')
+      expect(page).to have_button('中止')
+      expect(page).to have_button('リセット')
 
-    fill_in 'post[title]', with: @post_room
-    fill_in 'post[body]', with: @post_body
+      fill_in 'post[title]', with: @post_room
+      fill_in 'post[body]', with: @post_body
 
-    expect{
-      find('#submit-btn').click
-    }.to change { Post.count }.by(1)
+      expect{
+        find('#submit-btn').click
+      }.to change { Post.count }.by(1)
     
-    expect(current_path).to eq(root_path)
+      expect(current_path).to eq(root_path)
 
-    expect(page).to have_content(@post_title)
+      expect(page).to have_content(@post_title)
 
-    expect(page).to have_no_content('Title:')
-    expect(page).to have_no_content('Body:')
+      expect(page).to have_no_content('Title:')
+      expect(page).to have_no_content('Body:')
 
-    expect(page).to have_no_button('保存')
-    expect(page).to have_no_button('中止')
-    expect(page).to have_no_button('リセット')
+      expect(page).to have_no_button('保存')
+      expect(page).to have_no_button('中止')
+      expect(page).to have_no_button('リセット')
+    end
   end
-
-  it 'ログインしていないユーザーは投稿ボタンがない' do
-    visit root_path
-    expect(page).to have_no_content('#face-btn')
+  
+  context 'メモ投稿できないとき' do
+    it 'ログインしていないユーザーは投稿ボタンがない' do
+      visit root_path
+      expect(page).to have_no_content('#face-btn')
+    end
   end
 end
 
