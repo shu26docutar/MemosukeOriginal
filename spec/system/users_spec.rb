@@ -5,13 +5,12 @@ RSpec.describe '新規登録', type: :system do
     @user = FactoryBot.build(:user)
   end
 
-  context 'ユーザー新規登録ができるとき' do 
+  context 'ユーザー新規登録ができるとき' do
     it '正しい情報を入力すればユーザー新規登録ができてトップページに移動する' do
-
       visit root_path
 
       expect(
-        find('.icon-area').find("#face-btn").hover
+        find('.icon-area').find('#face-btn').hover
       ).to have_content('face')
 
       expect(page).to have_content('サインイン')
@@ -26,15 +25,15 @@ RSpec.describe '新規登録', type: :system do
       select '1970', from: 'user[birthday(1i)]'
       select '1', from: 'user[birthday(2i)]'
       select '1', from: 'user[birthday(3i)]'
-      
-      expect{
+
+      expect do
         find('input[name="commit"]').click
-      }.to change { User.count }.by(1)
-      
-      expect(current_path).to eq (root_path)
+      end.to change { User.count }.by(1)
+
+      expect(current_path).to eq(root_path)
 
       expect(
-        find('.icon-area').find("#face-btn").hover
+        find('.icon-area').find('#face-btn').hover
       ).to have_content('face')
 
       expect(page).to have_content('詳細')
@@ -48,31 +47,30 @@ RSpec.describe '新規登録', type: :system do
 
   context 'ユーザー新規登録ができないとき' do
     it '誤った情報ではユーザー新規登録ができずに新規登録ページへ戻ってくる' do
-
       visit root_path
 
       expect(
-        find('.icon-area').find("#face-btn").hover
+        find('.icon-area').find('#face-btn').hover
       ).to have_content('face')
 
       expect(page).to have_content('サインイン')
 
       visit new_user_registration_path
 
-      fill_in 'Name', with: " "
-      fill_in 'Email', with: " "
-      fill_in 'Password', with: " "
-      fill_in 'Password confirmation', with: " "
+      fill_in 'Name', with: ' '
+      fill_in 'Email', with: ' '
+      fill_in 'Password', with: ' '
+      fill_in 'Password confirmation', with: ' '
 
       select '--', from: 'user[birthday(1i)]'
       select '--', from: 'user[birthday(2i)]'
       select '--', from: 'user[birthday(3i)]'
 
-      expect{
+      expect do
         find('input[name="commit"]').click
-      }.to change { User.count }.by(0)
+      end.to change { User.count }.by(0)
 
-      expect(current_path).to eq ('/users')
+      expect(current_path).to eq('/users')
     end
   end
 end
@@ -82,27 +80,27 @@ RSpec.describe 'ログイン', type: :system do
     @user = FactoryBot.create(:user)
   end
 
-  context "ユーザーログインができるとき" do
+  context 'ユーザーログインができるとき' do
     it '正しい情報を入力すればユーザーログインができてトップページに移動する' do
       visit root_path
 
       expect(
-        find('.icon-area').find("#face-btn").hover
+        find('.icon-area').find('#face-btn').hover
       ).to have_content('face')
 
       expect(page).to have_content('ログイン')
 
       visit new_user_session_path
 
-      fill_in "Email",	with: @user.email
+      fill_in 'Email',	with: @user.email
       fill_in 'Password', with: @user.password
 
       find('input[name="commit"]').click
-            
+
       expect(current_path).to eq(root_path)
 
       expect(
-        find('.icon-area').find("#face-btn").hover
+        find('.icon-area').find('#face-btn').hover
       ).to have_content('face')
 
       expect(page).to have_content('詳細')
@@ -119,9 +117,9 @@ RSpec.describe 'ログイン', type: :system do
       visit root_path
 
       expect(
-        find('.icon-area').find("#face-btn").hover
+        find('.icon-area').find('#face-btn').hover
       ).to have_content('face')
-     
+
       expect(page).to have_content('ログイン')
 
       visit new_user_session_path

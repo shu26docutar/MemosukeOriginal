@@ -10,11 +10,11 @@ RSpec.describe 'メモを投稿できるとき', type: :system do
   context 'メモを投稿できるとき' do
     it 'ログインしているユーザーは新規投稿できる' do
       sign_in(@user)
-        
+
       expect(page).to have_content('mode')
 
       find('.icon-area').find('#mode-btn').click
-    
+
       expect(page).to have_content('Title:')
       expect(page).to have_content('Body:')
 
@@ -25,10 +25,10 @@ RSpec.describe 'メモを投稿できるとき', type: :system do
       fill_in 'post[title]', with: @post_room
       fill_in 'post[body]', with: @post_body
 
-      expect{
+      expect  do
         find('#submit-btn').click
-      }.to change { Post.count }.by(1)
-    
+      end.to change { Post.count }.by(1)
+
       expect(current_path).to eq(root_path)
 
       expect(page).to have_content(@post_title)
@@ -65,8 +65,8 @@ RSpec.describe 'メモ詳細ページ', type: :system do
       expect(page).to have_content('削除')
       expect(page).to have_content('戻る')
       expect(page).to have_content('編集')
-      expect(page).to have_content("#{@post.title}")
-      expect(page).to have_content("#{@post.body}")
+      expect(page).to have_content(@post.title.to_s)
+      expect(page).to have_content(@post.body.to_s)
 
       find('#back-btn').click
 
@@ -115,12 +115,12 @@ RSpec.describe 'メモ編集', type: :system do
         find('#post_body').value
       ).to eq(@post.body)
 
-      fill_in 'post[title]', with: "#{@post.title}"
+      fill_in 'post[title]', with: @post.title.to_s
       fill_in 'post[body]', with: "#{@post.body}+編集したテキスト"
 
-      expect{
+      expect  do
         find('input[name="commit"]').click
-      }.to change { Post.count }.by(0)
+      end.to change { Post.count }.by(0)
 
       expect(page).to have_content('Post was successfully updated.')
 
@@ -131,7 +131,7 @@ RSpec.describe 'メモ編集', type: :system do
       expect(page).to have_content(@post_title)
     end
   end
-  
+
   context 'メモを編集することができないとき' do
     it '未ログインユーザはメモ編集ページに画面遷移できない' do
       visit root_path
@@ -163,13 +163,13 @@ RSpec.describe 'メモ削除', type: :system do
 
       expect(page).to have_content('Post was successfully destroyed.')
 
-      expect(current_path).to eq (posts_path)
+      expect(current_path).to eq(posts_path)
 
       visit root_path
 
-      expect(current_path).to eq (root_path)
+      expect(current_path).to eq(root_path)
 
-      expect(page).to have_no_content("#{@post.title}")
+      expect(page).to have_no_content(@post.title.to_s)
     end
   end
 
@@ -180,5 +180,4 @@ RSpec.describe 'メモ削除', type: :system do
       expect(current_path).to eq(new_user_session_path)
     end
   end
-  
 end

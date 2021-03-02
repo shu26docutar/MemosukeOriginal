@@ -9,13 +9,13 @@ RSpec.describe 'スケジュール投稿', type: :system do
   context 'スケジュールが登録できるとき' do
     it 'ログインしているユーザーがスケジュールを作成できるとき' do
       sign_in(@user)
-      
-      expect(page).to have_content('translation missing: ja.devise.sessions.user.signed_in') 
+
+      expect(page).to have_content('translation missing: ja.devise.sessions.user.signed_in')
       expect(page).to have_content('add')
 
       find('.events-btn').click
 
-      expect(current_path).to eq (new_event_path)
+      expect(current_path).to eq(new_event_path)
 
       expect(page).to have_content('メモ')
       expect(page).to have_content('場所')
@@ -35,35 +35,35 @@ RSpec.describe 'スケジュール投稿', type: :system do
       find('.btn-url').click
       fill_in 'event[url]', with: @event.url
 
-      select '2021', from:'event[start_time(1i)]'
-      select '3', from:'event[start_time(2i)]'
-      select '2', from:'event[start_time(3i)]'
-      select '10', from:'event[start_time(4i)]'
-      select '10', from:'event[start_time(5i)]'
+      select '2021', from: 'event[start_time(1i)]'
+      select '3', from: 'event[start_time(2i)]'
+      select '2', from: 'event[start_time(3i)]'
+      select '10', from: 'event[start_time(4i)]'
+      select '10', from: 'event[start_time(5i)]'
 
-      expect{
+      expect do
         find('#submit-btn').click
-      }.to change { Event.count }.by(1)
+      end.to change { Event.count }.by(1)
 
-      expect(current_path).to eq (root_path)
+      expect(current_path).to eq(root_path)
 
       expect(page).to have_content(@event_title)
-      
+
       # 詳細ページの画面遷移
       find('.event-name').click
-      
+
       expect(page).to have_content('Title :')
-      expect(page).to have_content("#{@event_title}")
+      expect(page).to have_content(@event_title.to_s)
       expect(page).to have_content('Schedule Time :')
-      expect(page).to have_content("#{@schedule_time}")
+      expect(page).to have_content(@schedule_time.to_s)
       expect(page).to have_content('Plan :')
-      expect(page).to have_content("#{@event_plan}")
-      expect(page).to have_content("Comment :")
-      expect(page).to have_content("#{@event_comment}")
-      expect(page).to have_content('Place :') 
-      expect(page).to have_content("#{@event_place}") 
+      expect(page).to have_content(@event_plan.to_s)
+      expect(page).to have_content('Comment :')
+      expect(page).to have_content(@event_comment.to_s)
+      expect(page).to have_content('Place :')
+      expect(page).to have_content(@event_place.to_s)
       expect(page).to have_content('Url :')
-      expect(page).to have_content("#{@event_url}")
+      expect(page).to have_content(@event_url.to_s)
 
       expect(page).to have_content('編集')
       expect(page).to have_content('戻る')
@@ -71,7 +71,7 @@ RSpec.describe 'スケジュール投稿', type: :system do
 
       find('#back-btn').click
 
-      expect(current_path).to eq (root_path) 
+      expect(current_path).to eq(root_path)
 
       # 編集ページの遷移
       find('.event-name').click
@@ -94,21 +94,20 @@ RSpec.describe 'スケジュール投稿', type: :system do
       find('.btn-url').click
       fill_in 'event[comment]',	with: "#{@post_comment}+編集したテキスト"
 
-      expect{
+      expect  do
         find('input[name="commit"]').click
-      }.to change { Event.count }.by(0)
+      end.to change { Event.count }.by(0)
 
       find('#back-btn').click
 
-      expect(current_path).to eq (root_path) 
+      expect(current_path).to eq(root_path)
 
       # スケジュール削除
       find('.event-name').click
       find('#delete-btn').click
       expect(accept_confirm).to have_content('削除してもよろしいですか?')
-      
-      expect(current_path).to eq (root_path)
 
+      expect(current_path).to eq(root_path)
     end
   end
 
@@ -117,7 +116,7 @@ RSpec.describe 'スケジュール投稿', type: :system do
       visit root_path
       expect(page).to have_no_content('#add-btn')
       visit new_event_path
-      expect(current_path).to eq (new_user_session_path) 
+      expect(current_path).to eq(new_user_session_path)
     end
   end
 
