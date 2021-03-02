@@ -1,20 +1,20 @@
 //comment
 $(function () {
     $('.btn-comment').on('click', () => {
-        $('#comment').show();
+        $('#comment, #comment-lavel').show();
     });
 });
 
 //place
 $(function () {
     $('.btn-place').on('click', () => {
-        $('#place').show();
+        $('#place, #place-lavel').show();
     });
 });
 
 //url
 $(function () {
     $('.btn-url').on('click', () => {
-        $('#url').show();
+        $('#url, #url-lavel').show();
     });
 });
