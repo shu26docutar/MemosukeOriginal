@@ -13,7 +13,7 @@ RSpec.describe 'メモを投稿できるとき', type: :system do
         
       expect(page).to have_content('mode')
 
-      find('.icon-area').find('#add-btn').click
+      find('.icon-area').find('#mode-btn').click
     
       expect(page).to have_content('Title:')
       expect(page).to have_content('Body:')
@@ -41,7 +41,7 @@ RSpec.describe 'メモを投稿できるとき', type: :system do
       expect(page).to have_no_button('リセット')
     end
   end
-  
+
   context 'メモ投稿できないとき' do
     it 'ログインしていないユーザーは投稿ボタンがない' do
       visit root_path
@@ -65,6 +65,8 @@ RSpec.describe 'メモ詳細ページ', type: :system do
       expect(page).to have_content('削除')
       expect(page).to have_content('戻る')
       expect(page).to have_content('編集')
+      expect(page).to have_content("#{@post.title}")
+      expect(page).to have_content("#{@post.body}")
 
       find('#back-btn').click
 
