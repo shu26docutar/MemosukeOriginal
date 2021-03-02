@@ -1,0 +1,23 @@
+<div class="user-show-container">
+    <div class="user-show-contents">
+        
+            <div class="more-lists">
+                <p><%= @user.name %>さんの詳細</p>
+            </div>
+
+            <div class="more-lists">
+                <p>名前 :</p>
+                <p><%= @user.name %></p>
+            </div>
+
+            <div class="more-lists">
+                <p>Email :</p>
+                <p><%= @user.email %></p>
+            </div>
+
+            <div class="more-lists">
+                <%= link_to '戻る', root_path, class: "select-btn", id: 'back-btn' %>
+            </div>  
+
+    </div>
+</div>

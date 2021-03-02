@@ -14,7 +14,6 @@ html, body {
 .header-content {
     height: 70px;
     border-bottom: 1px solid #778899;
-    opacity: 0.6;
 }
 
 .header {
@@ -50,11 +49,6 @@ abbr[title], acronym[title] {
   }
 
 
-.face-btn:hover {
-    background-color: red;
-    opacity: 0.5;
-}
-
 .navbar {
     height: 200px;
     width: 200px;
@@ -65,12 +59,19 @@ abbr[title], acronym[title] {
     padding: 20px 0 ;
     box-shadow: 5px 5px 10px , -5px -5px 10px #AAAAAA;
     display: none;
+    background-color: white;
 }
 
 .nav-lists>li {
+    color: #9ec34b;
     font-size: 25px;
-    margin-bottom: 10px;
+    margin-bottom: 50px;
     padding-inline-start: 0;
+}
+
+.nav-lists>li>a {
+    color: #9ec34b;
+    text-decoration: none;
 }
 
 .add-btn {
@@ -166,7 +167,7 @@ abbr[title], acronym[title] {
 
 .show-area, .show-memo-title, .show-memo-textarea, .edit-memo-textarea, 
 .memo-box, .create-memo-title, .create-memo-body,
-.event-form, .form-event, .details {
+.event-form, .form-event, .details, .user-show-contents {
     box-shadow: 1px 1px 5px 1px #999;
 }
 
