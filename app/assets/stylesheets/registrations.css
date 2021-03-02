@@ -93,3 +93,35 @@
     opacity: 0.5;
 }
 /* ここまで */
+
+/* user-show */
+.user-show-container {
+    height: 100vh;
+    width: 100vw;
+    background-color: #AAAAAA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.user-show-contents {
+    height: 400px;
+    width: 500px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 20px;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.more-lists {
+    margin: 20px;
+}
+
+.more-lists > p {
+    margin-bottom: 15px;
+    font-size: 30px; 
+}
+/* end */

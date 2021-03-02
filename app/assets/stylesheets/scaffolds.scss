@@ -6,6 +6,8 @@ p, ol, ul, td {
   list-style: none;
   text-align: center;
   padding-inline-start: 0;
+  // text-decoration: none;
+  // border-style: none;
 }
 
 pre {
@@ -61,6 +63,7 @@ div {
     font-size: 12px;
     list-style: none;
     padding-inline-start: 0;
+    margin-bottom: 5px;
   }
 }
 
