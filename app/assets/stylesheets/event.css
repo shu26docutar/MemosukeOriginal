@@ -87,6 +87,10 @@
 #comment, #place, #url {
     display: none;
 }
+
+#comment-lavel, #place-lavel, #url-lavel {
+    display: none;
+}
 /* end */
 
 /* event-show */

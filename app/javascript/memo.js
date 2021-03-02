@@ -1,5 +1,5 @@
 function memo () {
-    const iconBtn = document.getElementById('add-btn');
+    const iconBtn = document.getElementById('mode-btn');
     const memoArea = document.getElementById('memo-area');
     const cancel = document.getElementById('cancel-btn');
     const calendar = document.getElementById('calendar');

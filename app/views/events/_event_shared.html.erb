@@ -3,26 +3,32 @@
     <%= form_with(model: @event, local: true) do |f| %>
 
         <div class="event-area">
+            <h1>Title :</h1>
             <%= f.text_field :title, class: 'form-event', id: 'form-event', placeholder: 'タイトル', autofocus: true %>
         </div>
 
         <div class="event-area">
+            <h1>Plan :</h1>
             <%= f.text_field :plan, class: 'form-event', id: 'form-event', placeholder: '内容' %>
         </div>
 
         <div class="event-area">
+            <h1 id="comment-lavel">Comment :</h1>
             <%= f.text_field :comment, class: 'form-event', id: 'comment', placeholder: 'コメント' %>
         </div>
 
         <div class="event-area">
+            <h1 id="place-lavel">Place :</h1>
             <%= f.text_field :place, class: 'form-event', id: 'place', placeholder: '場所' %>
         </div>
 
         <div class="event-area">
+            <h1 id="url-lavel">Url :</h1>
             <%= f.text_field :url, class: 'form-event', id: 'url', placeholder: 'Url' %>
         </div>
 
         <div class="event-area">
+            <h1>Schedule Time :</h1>
             <%= f.datetime_select :start_time, class: 'form-event', id: 'first-show', placeholder: 'times' %>
         </div>
 
@@ -49,7 +55,7 @@
                 </div>
 
                 <div class="submit-btn">
-                    <%= f.submit '保存', class: 'actions-btn' %>
+                    <%= f.submit '保存', class: 'actions-btn', id: "submit-btn" %>
                 </div>
             </div>
         </div>
