@@ -41,9 +41,9 @@
         <% end %>
 
         <div class="show-event-btn">
-            <%= link_to '編集', edit_event_path(@event), class: "select-btn", id: 'edit-btn' %>
-            <%= link_to '削除', @event, method: :delete, class: "select-btn", id: 'delete-btn', data: { confirm: '削除してもよろしいですか?' } %>
             <%= link_to '戻る', root_path, class: "select-btn", id: 'back-btn' %>
+            <%= link_to '削除', @event, method: :delete, class: "select-btn", id: 'delete-btn', data: { confirm: '削除してもよろしいですか?' } %>
+            <%= link_to '編集', edit_event_path(@event), class: "select-btn", id: 'edit-btn' %>
         </div>
     </div>
 </div>

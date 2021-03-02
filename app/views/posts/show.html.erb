@@ -15,8 +15,8 @@
         </div>
 
         <div class="memo-show-btn">
-            <%= link_to '削除', post_path(@post.id), method: :delete, class: "actions-btn", id: "delete-btn", data: { confirm: '削除してもよろしいですか?' } %>
             <%= link_to '戻る', root_path, class: "actions-btn", id: "back-btn" %>
+            <%= link_to '削除', post_path(@post.id), method: :delete, class: "actions-btn", id: "delete-btn", data: { confirm: '削除してもよろしいですか?' } %>
             <%= link_to '編集', edit_post_path(@post.id), class: "actions-btn", id: "edit-btn" %>
         </div>
     </div>
