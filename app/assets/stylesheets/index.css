@@ -57,12 +57,12 @@ abbr[title], acronym[title] {
 
 .navbar {
     height: 200px;
-    width: 150px;
+    width: 200px;
     position: absolute;
     right: 30px;
     top: 70px;
     border-radius: 10px;
-    padding: 20px 0 0 50px;
+    padding: 20px 0 ;
     box-shadow: 5px 5px 10px , -5px -5px 10px #AAAAAA;
     display: none;
 }
