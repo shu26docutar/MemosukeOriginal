@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   }
   
   root to: 'posts#index'
-  resources :posts, except: :new
+  resources :posts, except: :new do
+    collection do
+      get 'search'
+    end
+  end
   resources :events
   resources :users, only: :show
 end

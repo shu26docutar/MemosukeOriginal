@@ -11,7 +11,14 @@
 
             <% if user_signed_in? %>
             <div class="icon-btn">
-                <button class="material-icons search-btn"><abbr title="検索">search</abbr></button>
+                <%= form_with url: search_posts_path, method: :get, local: true do |f| %>
+                    <%= f.text_field :title, class: "search-form" %>
+                    <%= f.submit :search, class: "search-form" %>
+                <% end %>
+            </div>
+
+            <div class="icon-btn">
+                <button class="material-icons", id="search-btn"><abbr title="検索">search</abbr></button>
             </div>
 
             <div class="icon-btn">

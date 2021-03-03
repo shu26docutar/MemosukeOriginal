@@ -18,3 +18,10 @@ $(function () {
         $('#url, #url-lavel').show();
     });
 });
+
+//search
+$(function () {
+    $('#search-btn').on('click', () => {
+        $('.search-form').show();
+    });
+});

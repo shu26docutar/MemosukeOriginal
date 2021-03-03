@@ -167,7 +167,8 @@ abbr[title], acronym[title] {
 
 .show-area, .show-memo-title, .show-memo-textarea, .edit-memo-textarea, 
 .memo-box, .create-memo-title, .create-memo-body,
-.event-form, .form-event, .details, .user-show-contents {
+.event-form, .form-event, .details,
+.user-show-contents, .results {
     box-shadow: 1px 1px 5px 1px #999;
 }
 
@@ -224,5 +225,48 @@ h1 {
 .links-btn-area:hover {
     opacity: 0.5;
     background-color: #AAAAAA;
+}
+/* end */
+
+/* search-form */
+.search-form {
+    display: none;
+}
+
+.search-forms {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #AAAAAA;
+}
+
+.results {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.results > h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid#000;
+}
+
+.results > h2 {
+    font-size: 25px;
+}
+
+.results > p {
+    font-size: 20px;
+    margin-bottom: 20px;
+    padding: 5px 10px;
+    background-color: #00FF99;
+    
 }
 /* end */

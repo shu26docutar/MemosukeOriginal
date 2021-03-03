@@ -1,0 +1,12 @@
+
+<div class="search-forms">
+    <div class="results">
+        <h1>検索結果</h1>
+
+        <% @posts.each do |post| %>
+            <h2>Title :</h2>
+            <p><%= link_to post.title, post_path(post), class: "room-title" %></p>
+        <% end %>
+        <%= link_to '戻る', root_path, class: "select-btn", id: 'back-btn' %>
+    </div>
+</div>
