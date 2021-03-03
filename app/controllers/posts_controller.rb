@@ -43,6 +43,14 @@ class PostsController < ApplicationController
     end
   end
 
+  def search
+    if params[:title].present?
+      @posts = Post.where('title LIKE ?', "%#{params[:title]}%")
+    else
+      @posts = Post.none
+    end
+  end
+
   private
 
   def set_post
