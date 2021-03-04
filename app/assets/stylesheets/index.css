@@ -67,6 +67,7 @@ abbr[title], acronym[title] {
     font-size: 25px;
     margin-bottom: 50px;
     padding-inline-start: 0;
+    text-align: center;
 }
 
 .nav-lists>li>a {
