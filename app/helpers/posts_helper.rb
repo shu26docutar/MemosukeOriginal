@@ -4,7 +4,7 @@ module PostsHelper
 
   class HTMLwithCoderay < Redcarpet::Render::HTML
     def block_code(code, language)
-      language = language.split(':')[0]
+      # language = language.split(':')[0]
 
       lang = case language.to_s
              when 'ruby'
@@ -16,7 +16,7 @@ module PostsHelper
              when 'html'
                'html'
              when ''
-               'md'
+               'html'
              else
                language
              end
