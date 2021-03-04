@@ -10,9 +10,9 @@
 - https://memosuke-original.herokuapp.com/
 
 # テスト用アカウント
-|name     | 服部楓平    |
-|email    | test1@test |
-|password | test01     |
+- name     :服部楓平    
+- email    :test1@test 
+- password :test01     
 
 # 利用方法
 - 新規登録・ログイン 新規登録もしくは、ログインを行います。
@@ -56,7 +56,7 @@
 # Association
 ## User
 |  Column  |  Type  |              Options               |
-| ------------------------------------------------------ |
+| -------- | ------ | ---------------------------------- |
 | name     | string | null:false                         |
 | email    | string | null:false,default:"",unique: true |
 | password | string | null:false                         |
@@ -70,7 +70,7 @@
 
 ## Sns_credentials
 |  Column  |    Type    |      Options     |
-| ---------------------------------------- |
+| -------- | ---------- | ---------------- |
 | provider | string     |                  |
 | uid      | string     |                  |
 | user     | references | foreign_key:true |
@@ -81,7 +81,7 @@
 
 ## Post
 |  Column  |    Type    |      Options     |
-| ---------------------------------------- |
+| -------- | ---------- | ---------------- |
 | title    | string     | null:false       |
 | body     | text       |                  |
 | user     | references | foreign_key:true |
@@ -92,7 +92,7 @@
 
 ## Event
 |   Column   |    Type    |      Options     |
-| ------------------------------------------ |
+| ---------- | ---------- | ---------------- |
 | title      | string     | null:false       |
 | plan       | string     |                  |
 | comment    | string     |                  |
