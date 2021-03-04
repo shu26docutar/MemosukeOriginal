@@ -4,8 +4,8 @@ class PostsController < ApplicationController
 
   def index
     @post = Post.new
-    @posts = Post.all
-    @events = Event.all
+    @posts = Post.all.includes(:user)
+    @events = Event.all.includes(:user)
   end
 
   def show
