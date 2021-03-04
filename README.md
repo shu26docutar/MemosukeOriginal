@@ -25,6 +25,9 @@
 
 # 実装した機能についてのGIFと説明
 [![Image from Gyazo](https://i.gyazo.com/8ce008908400980faeca0721d04799ef.gif)](https://gyazo.com/8ce008908400980faeca0721d04799ef)
+[![Image from Gyazo](https://i.gyazo.com/5f698a8da79725f5c4ebfcf7805eff7b.gif)](https://gyazo.com/5f698a8da79725f5c4ebfcf7805eff7b)
+[![Image from Gyazo](https://i.gyazo.com/2fa7cc149b02cbee6b0bf3a8b4b1524a.gif)](https://gyazo.com/2fa7cc149b02cbee6b0bf3a8b4b1524a)
+[![Image from Gyazo](https://i.gyazo.com/e07b47034847aeda08a71b294ab6a666.gif)](https://gyazo.com/e07b47034847aeda08a71b294ab6a666)
 
 # 今後追加する機能
 - マークダウン方式の記号のバリデーションを増やすことでより、綺麗にまとめられることができるようにします。
