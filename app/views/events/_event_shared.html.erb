@@ -1,6 +1,7 @@
-<div class="event-forms">
-<div class="event-form">
-    <%= form_with(model: @event, local: true) do |f| %>
+
+<div class="show-container">
+    <div class="details">
+        <%= form_with(model: @event, local: true) do |f| %>
 
         <div class="event-area">
             <h1>Title :</h1>
@@ -59,6 +60,6 @@
                 </div>
             </div>
         </div>
-    <% end %>
-</div> 
+        <% end %>
+    </div> 
 </div>
