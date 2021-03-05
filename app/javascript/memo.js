@@ -3,6 +3,7 @@ function memo () {
     const memoArea = document.getElementById('memo-area');
     const cancel = document.getElementById('cancel-btn');
     const calendar = document.getElementById('calendar');
+    
     iconBtn.addEventListener('click' , () => {
         memoArea.setAttribute("style", "display:block;");
         calendar.setAttribute("style", "display:none;");

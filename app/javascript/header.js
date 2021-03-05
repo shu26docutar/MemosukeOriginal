@@ -2,6 +2,7 @@ function icon () {
     const faceBtn = document.getElementById('face-btn');
     const navBar = document.getElementById('navbar');
     var count = 0;
+    
     faceBtn.addEventListener('mouseover', () => {
         navBar.setAttribute("style", "display:block;");
         count += 1;

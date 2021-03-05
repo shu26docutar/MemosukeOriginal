@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, only: %i[new edit show]
   before_action :set_event, only: %i[show edit destroy update]
+  
   def inex
     @events = Event.all.includes(:user)
     events = Event.all.includes(:user)
