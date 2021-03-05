@@ -1,26 +1,20 @@
-//comment
 $(function () {
+    // comment
     $('.btn-comment').on('click', () => {
         $('#comment, #comment-lavel').show();
     });
-});
 
-//place
-$(function () {
+    // place
     $('.btn-place').on('click', () => {
         $('#place, #place-lavel').show();
     });
-});
 
-//url
-$(function () {
+    // url
     $('.btn-url').on('click', () => {
         $('#url, #url-lavel').show();
     });
-});
 
-//search
-$(function () {
+    // search
     $('#search-btn').on('click', () => {
         $('.search-form').show();
     });
